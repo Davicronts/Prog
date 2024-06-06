@@ -1,5 +1,0 @@
-kernel;núcleo;fruto
-bow;arco;inclinarse;reverencia;lazo
-speech;expresión;discurso
-toggle;conmutar;alternar
-carry;llevar;transportar;soportar
