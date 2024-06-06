@@ -1,0 +1,122 @@
+Comentarios: [Ctrl+K Ctrl+C] y [Ctrl+K Ctrl+U]
+
+/**
+ *
+ * Definición de la clase Libro
+ * 
+ * @author David Martín García
+ */
+
+/**
+* Comprueba si un número entero positivo es primo o no.
+* Un número es primo cuando únicamente es divisible entre
+* él mismo y la unidad.
+*
+* @param x un número entero positivo
+* @return <code>true</code> si el número es primo
+* @return <code>false</code> en caso contrario
+*/
+
+System.out.println("Texto");
+
+String x = System.console().readLine();
+int x = Integer.parseInt(System.console().readLine());
+double x = Double.parseDouble(System.console().readLine());
+
+Scanner s = new Scanner(System.in);
+int x = s.nextInt();
+double x = s.nextDouble();
+String frase = s.nextLine();
+s.close();
+
+frase = frase.toLowerCase();
+frase = frase.toUpperCase();
+
+if (x == 0) {
+  System.out.println("Texto");
+} else {
+  System.out.println("Texto");
+}
+
+switch (x) {
+  case 1:
+    System.out.println("Texto");
+    break;
+  case 2:
+    System.out.println("Texto");
+    break;
+  case 3:
+    System.out.println("Texto");
+    break;
+  default:
+    System.out.println("Texto");
+}
+
+for (int i = 1; i < 11; i++) {
+  System.out.println(i);
+}
+
+int i = 1;
+while (i < 11) {
+  System.out.println(i);
+  i++;
+}
+
+int i = 1;
+do {
+  System.out.println(i);
+  i++;
+} while (i < 11);
+
+int min = 0;
+int max = 9;
+int numeroAleatorio = (int)(Math.random() * ((max - min) +1) + min);
+
+public static tipoVariable (void si no devuelve) nombreFuncion (int x, int y) {
+    // Cuerpo de la función
+    // Procesamiento y cálculos
+    return valorRetorno;
+}
+
+try {
+
+} catch (Exception e) {
+
+}
+
+import java.util.ArrayList;
+ArrayList<Integer> x = new ArrayList<Integer>();
+
+x.add(1);
+x.get(i);
+x.size();
+
+for (Integer numero : x) {
+    System.out.println(n);
+}
+
+for (int i = 0; i < x.size(); i++) {
+    int elemento = x.get(i);
+    System.out.println(elemento);
+}
+
+int[] num = new int[10];
+num[0] = 8;
+
+// Array unidimensional
+int[] array = {1, 2, 3, 4, 5};
+for (int i = 0; i < array.length; i++) {
+    System.out.println("Elemento en array[" + i + "]: " + array[i]);
+}
+
+// Array bidimensional
+int[][] array2D = {
+       {1, 2, 3, 4},
+       {5, 6, 7, 8},
+       {9, 10, 11, 12}
+};
+for (int i = 0; i < array2D.length; i++) {
+    for (int j = 0; j < array2D[i].length; j++) {
+         System.out.println("Elemento en array2D[" + i + "][" + j + "]: " + array2D[i][j]);
+    }
+}

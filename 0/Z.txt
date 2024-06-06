@@ -1,0 +1,112 @@
+- Dar la vuelta a un número:
+
+  public static long voltea(long x) {
+    if (x < 0) {
+      return -voltea(-x);
+    }
+
+    long volteado = 0;
+
+    while (x > 0) {
+      volteado = (volteado * 10) + (x % 10);
+      x = x / 10;
+    }
+
+    return volteado;
+  }
+
+
+- Si un número es primo:
+
+  public static Boolean esPrimo(long n) {
+    if (n < 2) {
+      return false;
+    } else {
+      for (long i = n / 2; i >= 2; i--) {
+        if (n % i == 0) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+
+- Calcular la longitud de un número:
+
+  public static int digitos(long x) {
+    if (x < 0) {
+      x = -x;
+    }
+
+    if (x == 0) {
+      return 1;
+    } else {
+      int n = 0;
+      while (x > 0) {
+        x = x / 10; // se le quita un dígito a x
+        n++; // incrementa la cuenta de dígitos
+      }
+      return n;
+    }
+  }
+
+
+- Dividir un número en dígitos:
+
+int numero = 12345;
+
+int digito1 = numero % 10; // Esto te dará el último dígito (5 en este caso)
+numero = numero / 10; // Esto quitará el último dígito del número (ahora numero es 1234)
+
+
+- Desplazar array un lugar a la derecha:
+
+int[] numeros = new int[15];
+System.out.println("\nArray Rotado: ");
+
+int temporal = numeros[14];
+for (i = 14; i > 0; i--) {
+  numeros[i] = numeros[i - 1];
+}
+numeros[0] = temporal;
+
+for (i = 0; i < 15; i++) {
+  System.out.print(numeros[i] + " ");
+}
+
+
+- Devuelve el dígito que está en la posición n:
+
+  public static int digitoN(long x, int n) {
+    x = voltea(x);
+
+    while (n-- > 0) {
+      x = x / 10;
+    }
+
+    return (int)(x % 10);
+  }
+
+
+- Muestra los elementos de un array:
+
+  public static void muestraArrayInt(int x[]) {
+    for (int n : x) {
+      System.out.print(n + " ");
+    }
+    System.out.println();
+  }
+
+
+- Genera array aleatorio:
+
+  public static int[] generaArrayInt(int n, int minimo, int maximo) {
+    int[] x = new int[n];
+
+    for(int i = 0; i < n; i++) {
+      x[i] = (int)(Math.random()*(maximo - minimo + 1) + minimo);
+    }
+      
+    return x;
+  }
