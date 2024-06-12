@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Si salen dos dados iguales no se puntúa pero se gana el derecho de volver a
  * tirar.
  */
-public class TresOMas {
+public class TresOMasNew {
     public static void main(String[] args) {
         int rondas = 10; // Número de rondas
         int dados = 5; // Número de dados
@@ -34,8 +34,11 @@ public class TresOMas {
 
                     // Mostrar la tirada del jugador
                     System.out.print("Tirada " + ronda + " del jugador " + (jugador + 1) + ": ");
-                    for (int dado : tiradaDados) {
-                        System.out.print(dado + "-");
+                    for (int i = 0; i < dados; i++) {
+                        System.out.print(tiradaDados[i]);
+                        if (i < dados - 1) {
+                            System.out.print("-");
+                        }
                     }
 
                     // Calcular los puntos de la tirada
@@ -56,7 +59,7 @@ public class TresOMas {
             }
 
             // Mostrar el resultado de la ronda
-            System.out.println("Fin de ronda " + ronda + " ; Jugador 1 – " + puntuaciones[0] + " puntos ; Jugador 2 – "
+            System.out.println("Fin de ronda " + ronda + " ; Jugador 1 - " + puntuaciones[0] + " puntos ; Jugador 2 - "
                     + puntuaciones[1] + " puntos");
             System.out.println("Pulse INTRO para la siguiente ronda");
             scanner.nextLine();
@@ -114,14 +117,13 @@ public class TresOMas {
             conteo[dado - 1]++;
         }
 
-        // Verificar si hay al menos un par de dados
-        int pares = 0;
+        // Verificar si hay al menos un par de dados (dos o más dados iguales)
         for (int i = 0; i < conteo.length; i++) {
-            if (conteo[i] >= 2) {
-                pares++;
+            if (conteo[i] == 2) {
+                return true;
             }
         }
 
-        return pares > 0;
+        return false;
     }
 }
