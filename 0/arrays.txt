@@ -1,0 +1,49 @@
+int[] num = new int[10];
+num[0] = 8;
+
+// Array unidimensional
+int[] array = {1, 2, 3, 4, 5};
+for (int i = 0; i < array.length; i++) {
+    System.out.println("Elemento en array[" + i + "]: " + array[i]);
+}
+
+for (int numero : array) { // for al estilo foreach
+    System.out.print(numero + " ");
+}
+
+
+// Array bidimensional
+int[][] array2D = {
+       {1, 2, 3, 4},
+       {5, 6, 7, 8},
+       {9, 10, 11, 12}
+};
+
+for (int i = 0; i < array2D.length; i++) {
+    for (int j = 0; j < array2D[i].length; j++) {
+         System.out.println("Elemento en array2D[" + i + "][" + j + "]: " + array2D[i][j]);
+    }
+}
+
+
+- Muestra los elementos de un array:
+
+  public static void muestraArrayInt(int x[]) {
+    for (int n : x) {
+      System.out.print(n + " ");
+    }
+    System.out.println();
+  }
+
+
+- Genera array aleatorio:
+
+  public static int[] generaArrayInt(int n, int minimo, int maximo) {
+    int[] x = new int[n];
+
+    for(int i = 0; i < n; i++) {
+      x[i] = (int)(Math.random()*(maximo - minimo + 1) + minimo);
+    }
+      
+    return x;
+  }
