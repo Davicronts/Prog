@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Ejemplo</title>
+</head>
+<body>
+    <form action="procesarFormulario.jsp" method="post">
+        Nombre: <input type="text" name="nombre"><br>
+        Edad: <input type="text" name="edad"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+
+<%
+    String nombre = request.getParameter("nombre");
+    String edad = request.getParameter("edad");
+%>
+    <h1>Datos del Formulario</h1>
+    <p>Nombre: <%= nombre %></p>
+    <p>Edad: <%= edad %></p>
+
+
+    @Override
+    public String toString() {
+        return "<div class=\"tarjeta\">\n"
+             + "    <div class=\"titulo\">" + nombre + "</div>\n"
+             + "    <div class=\"descripcion\">" + descripción + "</div>\n"
+             + "    <img src=\"" + imagen + "\" alt=\"" + nombre + "\">\n"
+             + "</div>\n";
+    }
+
+
++ Se delimita mediante las etiquetas <% y %>.
++ Se genera código HTML mediante las instrucciones out.print y out.println.
+
+<% %> (Scriptlet) -> Se utilizan para ejecutar bloques de código Java.
+
+<%= %> (Expression) -> Se utilizan para evaluar expresiones y escribir su resultado 
+                       directamente en la salida HTML generada.
+
+<% out.println("<h1>¡Hola Mundo!</h1>"); %>
+
+System.getProperty(propiedad)
+<% out.print(request.getParameter("nombre")); %>
+
+out.print("<img src=\"" + nombreImagen +"\" width=\"20%\">");
+
+
+Integer.parseInt
+Double.parseDouble
+Integer.valueOf
+
++ Tabla:
+
+        <h1>Ejemplo de tabla</h1>
+        <table border="2">
+            <tr>
+                <td>Número</td><td>Cuadrado</td>
+            </tr>
+            <%
+            for(int i = 0; i < 10; i++) {
+            out.println("<tr>");
+            out.println("<td>" + i + "</td>");
+            out.println("<td>");
+            out.println(i * i);
+            out.println("</td></tr>");
+            }
+            %>
+        </table>
+-------------------------------------------------------------------
++ Recogida de datos:
+
+        <form method="post" action="incrementa5.jsp">
+            Introduzca un número (puede tener decimales):
+            <input type="text" name="numeroIntro">
+            <input type="submit" value="OK">
+        </form>
+
+---------------
+
+        El número introducido más cinco es
+        <%
+        double resultado;
+        resultado = Double.parseDouble(request.getParameter("numeroIntro")) + 5;
+        out.print(resultado);
+        %>
+---------------------------------------
+        <h1>Supercalculadora</h1>
+        <form method="post" action="suma.jsp">
+            x <input type="text" name="x"/></br>
+            y <input type="text" name="y"/></br>
+            <input type="submit">
+        </form>
+
+---------------
+
+        La suma es
+        <%
+        int primerNumero = Integer.valueOf(request.getParameter("x"));
+        int segundoNumero = Integer.valueOf(request.getParameter("y"));
+        out.println(primerNumero + segundoNumero);
+        %>
+-------------------------------------------------------------------
++ POO en JSP:
+
+<%@page import="dam1.Gato"%>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="estilos.css" />
+    </head>
+-------------------------------------------------------------------
+Plantilla HTML/JSP:
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Reset</title>
+    </head>
+    <body>
+        <%
+        response.sendRedirect("index.jsp");
+        %>
+    </body>
+</html>

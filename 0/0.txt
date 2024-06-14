@@ -83,19 +83,3 @@ try {
 } catch (Exception e) {
 
 }
-
-import java.util.ArrayList;
-ArrayList<Integer> x = new ArrayList<Integer>();
-
-x.add(1);
-x.get(i);
-x.size();
-
-for (Integer numero : x) {
-    System.out.println(n);
-}
-
-for (int i = 0; i < x.size(); i++) {
-    int elemento = x.get(i);
-    System.out.println(elemento);
-}

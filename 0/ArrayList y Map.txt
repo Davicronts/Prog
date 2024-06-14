@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+ArrayList<Integer> x = new ArrayList<Integer>();
+
+x.add(1);
+x.get(i);
+x.size();
+
+for (Integer numero : x) {
+    System.out.println(n);
+}
+
+for (int i = 0; i < x.size(); i++) {
+    int elemento = x.get(i);
+    System.out.println(elemento);
+}
+
+
+
+Map<Object, Object> videojuegos = (Map<Object, Object>) jsonObject;
+
+videojuegos.forEach((key, value) -> {
+    JSONObject juego = (JSONObject) value;
+
+    String name = (String) juego.get("name");
+    String img = (String) juego.get("header_image");
+    String desc = (String) juego.get("short_description");
+
+    // Aquí puedes hacer algo con name, img y desc, por ejemplo, imprimirlos
+    System.out.println("Name: " + name);
+    System.out.println("Image: " + img);
+    System.out.println("Description: " + desc);
+});
+
+
+Map<Object, Object> videojuegos = (Map<Object, Object>) jsonObject;
+for (Map.Entry<Object, Object> entry : videojuegos.entrySet()) {
+JSONObject juego = (JSONObject) entry.getValue();
+}
